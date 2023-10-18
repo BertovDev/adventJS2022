@@ -4,19 +4,9 @@ const a3 = ['bici', 'pc', 'pc']
 
 
 function getGiftsToRefill(a1, a2, a3) {
-  let array = [[...new Set(a1)], [...new Set(a2)], [...new Set(a3)]]
-
-  if(array.flat() === [] ) return []
-
-  let result = array.flat().filter(
-      (o => v => (o[v] = (o[v] || 0) + 1) === 2)
-      ({})
-  );
-
-
-  return array.flat().filter(el => !result.includes(el))
+return [...(new Set(a1.concat(a2, a3)))].filter(g => a1.includes(g) + a2.includes(g) + a3.includes(g) === 1);
 
 }
 
 
-console.log(getGiftsToRefill([], [], []))
+console.log(getGiftsToRefill(a1, a2, a3))
